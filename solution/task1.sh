@@ -1,7 +1,6 @@
 #!/bin/bash
 export temp_path=$(mktemp -d /tmp/solution.XXXXXX)
 export now_path=$(pwd)
-ls
 cd ..
 export Sdata_path=$(pwd)
 tar -xf data/archive-part1.tar -C $temp_path
