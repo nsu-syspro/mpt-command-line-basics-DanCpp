@@ -1,7 +1,11 @@
 #!/bin/bash
-path=$(mktemp -d /tmp/solution.XXXXXX)
+export temp_path=$(mktemp -d /tmp/solution.XXXXXX)
+export now_path=$(pwd)
+ls
 cd ..
-tar -xf data/archive-part1.tar -C $path
-unzip data/archive-part2.zip -d $path
-tar -czf data/archive-combined.tar.gz $path
-rm -r $path
+export Sdata_path=$(pwd)
+tar -xf data/archive-part1.tar -C $temp_path
+unzip data/archive-part2.zip -d $temp_path
+cd $temp_path
+tar -czvf $Sdata_path/data/archive-combined.tar.gz *
+rm -r $temp_path
